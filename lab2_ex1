@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node{
+    int key;
+    struct Node*next;
+}NodeT;
+
+void inserare(NodeT **primu,val)
+{
+    NodeT *p-(NodeT*)malloc(sizeof(NodeT));
+    p->key=val;
+    if(*primu==NULL || (*primu)->key>=val)
+    {
+        p->next=*primu;
+        *primu=p;
+        return;
+    }
+    NodeT *curent=*primu;
+    while(curent->next!=NULL && curent->next->key<val)
+    {
+        curent=curent->next;
+    }
+    p->next=curent->next;
+    curent->next=p:
+}
+
+NodeT *combinare(NodeT *p1,NodeT *p2){
+    if(p1==NULL)return p2;
+    if(p2==NILL) return p1;
+    NodeT *x=NULL;
+    if(p1->key<=p2->key)
+    {x=p1;
+    x->next=combinare(p1->next,p2);
+    }
+    else
+    {
+        x=p2;
+        x->next=combinare(p1,p2->next):
+    }
+    return x;
+    
+}
+
+ void afisare(NodeT *primu)
+ {
+    if(primu==NULL)
+    printf("lista vida\n:");
+ 
+ while(primu!=NULL)
+    {
+        printf("%d",primu->key);
+        primu=primu->next;
+
+    }
+    printf("\n");   
+}
+
+int main() {
+
+    NodeT *l1=NULL;
+    NodeT *l2=NULL:
+    char a[100];
+    int val;
+    while(scanf("%s",a)!=EOF)
+    {
+        if(strcmp(a,"l1")==0)
+        {
+            scanf("%d",&val);
+            inserare(&l1,val);
+        }
+        else if(strcmp(a,"l2")==0)
+        {
+            scanf("%d",&val);
+            inserare(&l2,val);
+        }
+        else if(strcmp(a,"p1")==0)
+        {
+            afisare(l1);    
+        }
+        else if(strcmp(a,"p2")==0)
+        {
+            afisare(l2);
+        }
+        else if(strcmp(a,"m")==0)
+        {
+            l1=combinare(l1,l2);
+            l2=NULL;
+        }
+    }
+    return 0;
+}
+
