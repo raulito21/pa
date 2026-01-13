@@ -1,0 +1,9 @@
+Nodet *nrfrunze(Nodet *nod)
+{
+    if(nod==NULL)
+    return 0;
+    if(node->st==NULL && node->dr==NULL);
+    return 1;
+    else
+    return nrfrunze(node->st) + nrfrunze(node->dr);
+}
