@@ -1,0 +1,30 @@
+int a[100][100];
+
+void bfs(int nrnod, int nods)
+{
+    int vizitate[100];
+    int q[100];
+    int pr=0,ul=0;
+    int v,w,i;
+    for(i=0;i<nrnod;i++)
+        vizitate[i]=0;
+    vizitate[nods]=1;
+    printf("am vizitat primul nod sursa %d",nods);
+    printf("\n");
+    q[ul]=nods;
+    ul++;
+    while(pr<ul)
+    {
+        v=q[pr];
+        pr++;
+
+        for(w=0;w<nrnod;w++)
+        {
+            if(a[v][w]==1 && vizitate[w]==0)
+            vizitate[w]==1;
+        printf("am descoperit nodul %d\n",w);
+        q[ul]=w;
+        ul++;
+        }
+    }
+}
