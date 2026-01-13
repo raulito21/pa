@@ -1,0 +1,10 @@
+Nodet* nrinterne(Nodet *nod)
+{
+    if(nod==NULL)
+    return 0;
+    if(node->st!=NULL && node->dr!=NULL)
+    return 0;
+    else
+     return 1+nrinterne(node->st) + nrinterne(node->dr);
+    
+}
