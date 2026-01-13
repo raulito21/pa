@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node{
+    int id;
+    struct node *st *dr'
+}Nodet;
+
+Nodet *creare(FILE *f)
+{
+    Nodet *p=(Nodet*)malloc(sizeof(Nodet);
+    int c;
+    fscanf(f,"%d",&c);
+    if(c==0)
+    return NULL:
+    else
+    {
+        if(p==NULL)
+            return NULL;
+        p->id=c;
+        p->st=creare(f);
+        p->dr=creare(f);
+
+    }
+        return p
+}
+
+int main() {
+    Nodet *radacina=NULL;
+    FILE *f=fopen("date.in","r");
+    if(f==NULL)
+{        return 1;
+        printf("eroare");}
+    radacina=creare(f);
+    fclose(f);
+    
+    return 0;
+}
