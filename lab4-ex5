@@ -1,0 +1,13 @@
+int inaltime(Npodet *nod)
+{
+    if(nod==NULL)
+        return -1;
+    int hst=inaltime(nod->st);
+    int hdr=inaltime(nod->dr);
+    if(hst>hdr)
+        return 1+hst;
+    else
+        return 1+hdr;
+
+    
+}
