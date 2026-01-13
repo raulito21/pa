@@ -1,0 +1,12 @@
+
+Nodet *cauta(Nodet *nod,int x)
+{
+    if(nod==NULL)
+    return NULL;
+    if(nod->id==x)
+    return nod;
+    if(nod->id>x)
+    return cauta(nod->st,x);
+    else
+    return cauta(nod->dr,x);
+}
