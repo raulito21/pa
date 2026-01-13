@@ -1,0 +1,29 @@
+Nodet *preordine(Nodet *p)
+{
+    if(p!=NULL)
+    {
+        printf("d",p->id);
+        p->st=preordine(p->st);
+        p->dr=preordine(p->dr);
+    }
+}
+//in
+Nodet* inordine(Nodet *p)
+{
+    if(p!=NULL)
+    {
+        p->st=inordine(p->st);
+        printf("%d",p->id);
+        p->dr=inordine(p->dr);
+    }
+}
+//post
+Nodet *post(Nodet *p)
+{
+    if(p!=NULL)
+    {
+        p->st=post(p->st);
+        p->dr=post(p->dr);
+        printf("%d",p->id);
+    }
+}
