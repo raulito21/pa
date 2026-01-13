@@ -1,0 +1,35 @@
+int a[100][100];
+int nrnod;
+
+void dsf(int nods)
+{
+    int culoare[100];
+    int t=-1;
+    int stiva[100];
+    int v,w,i;
+    for(int i=0;i<=nrnod;i++)
+    {
+        culoare[i]=0;//0=alb 1==gri
+    }
+    t++;
+    stiva[t]=nods;
+
+    while(t>=0)
+    {
+        v=stiva[t];
+        t--;
+        if(culoare[v]==0)
+            {
+                culoare[v]=1;
+                printf("vizitam nodul %d\n",v);
+                for(w=0;w<nrnod;w++)
+                    {
+                        if(a[v][w]==1 && couloare[w]==0)
+                        {
+                            t++;
+                            stiva[t]=w;
+                        }
+                    }
+            }
+    }
+}
